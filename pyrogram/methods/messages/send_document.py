@@ -42,7 +42,7 @@ class SendDocument(Scaffold):
         disable_notification: bool = None,
         reply_to_message_id: int = None,
         schedule_date: int = None,
-        mime_type: str = "application/zip"
+        mime_type: str = "application/zip",
         reply_markup: Union[
             "types.InlineKeyboardMarkup",
             "types.ReplyKeyboardMarkup",
