@@ -42,6 +42,7 @@ class SendDocument(Scaffold):
         disable_notification: bool = None,
         reply_to_message_id: int = None,
         schedule_date: int = None,
+        mime_type: str = " application/zip"
         reply_markup: Union[
             "types.InlineKeyboardMarkup",
             "types.ReplyKeyboardMarkup",
@@ -158,7 +159,7 @@ class SendDocument(Scaffold):
                     thumb = await self.save_file(thumb)
                     file = await self.save_file(document, progress=progress, progress_args=progress_args)
                     media = raw.types.InputMediaUploadedDocument(
-                        mime_type=self.guess_mime_type(document) or "application/zip",
+                        mime_type=mime_type,
                         file=file,
                         force_file=force_document or None,
                         thumb=thumb,
@@ -176,7 +177,7 @@ class SendDocument(Scaffold):
                 thumb = await self.save_file(thumb)
                 file = await self.save_file(document, progress=progress, progress_args=progress_args)
                 media = raw.types.InputMediaUploadedDocument(
-                    mime_type=self.guess_mime_type(document.name) or "application/zip",
+                    mime_type=mime_type,
                     file=file,
                     thumb=thumb,
                     attributes=[
