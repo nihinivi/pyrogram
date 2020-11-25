@@ -1406,7 +1406,7 @@ class Message(Object, Update):
             document=document,
             file_ref=file_ref,
             thumb=thumb,
-            mime_type=mime_type
+            mime_type=mime_type,
             caption=caption,
             parse_mode=parse_mode,
             disable_notification=disable_notification,
