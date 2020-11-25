@@ -1296,6 +1296,7 @@ class Message(Object, Update):
         parse_mode: Union[str, None] = object,
         disable_notification: bool = None,
         reply_to_message_id: int = None,
+        mime_type: str = "text/plain",
         reply_markup: Union[
             "types.InlineKeyboardMarkup",
             "types.ReplyKeyboardMarkup",
@@ -1405,6 +1406,7 @@ class Message(Object, Update):
             document=document,
             file_ref=file_ref,
             thumb=thumb,
+            mime_type=mime_type
             caption=caption,
             parse_mode=parse_mode,
             disable_notification=disable_notification,
